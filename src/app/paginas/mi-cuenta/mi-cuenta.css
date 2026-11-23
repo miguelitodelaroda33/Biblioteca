@@ -1,0 +1,17 @@
+.sub-menu {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.sub-menu a {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.sub-menu a.activo {
+  color: #0284c7;
+  font-weight: bold;
+}

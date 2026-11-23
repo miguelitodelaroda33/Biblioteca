@@ -1,0 +1,20 @@
+<h2>Catálogo de Libros</h2>
+
+<div class="filtros">
+  <span>Filtrar por género: </span>
+  <a routerLink="/libros">Todos</a> |
+  <a routerLink="/libros" [queryParams]="{ genero: 'novela' }">Novela</a> |
+  <a routerLink="/libros" [queryParams]="{ genero: 'ciencia-ficcion' }">Ciencia Ficción</a> |
+  <a routerLink="/libros" [queryParams]="{ genero: 'misterio' }">Misterio</a>
+</div>
+
+<ul>
+  @for (libro of librosFiltrados(); track libro.id) {
+    <li>
+      <a [routerLink]="['/libros', libro.id]">{{ libro.titulo }}</a>
+      <small> ({{ libro.autor }} - {{ libro.genero }})</small>
+    </li>
+  } @empty {
+    <li>No hay libros disponibles para este género.</li>
+  }
+</ul>
