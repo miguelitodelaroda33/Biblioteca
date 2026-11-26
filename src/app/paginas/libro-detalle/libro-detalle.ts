@@ -1,6 +1,6 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { LibrosService } from '../../servicios/libros';
+import { Libro, LibrosService } from '../../servicios/libros';
 
 @Component({
   selector: 'app-libro-detalle',
@@ -12,12 +12,11 @@ export class LibroDetalle {
   private librosService = inject(LibrosService);
   private router = inject(Router);
 
-  // Recibe :id de la ruta y lo convierte con Number()
-  id = input.required<string>();
-  libro = computed(() => this.librosService.obtenerPorId(Number(this.id())));
+  // Recibe el dato resuelto por libroResolver gracias a withComponentInputBinding()
+  libro = input.required<Libro>();
 
   siguienteLibro(): void {
-    const siguienteId = this.librosService.idSiguiente(Number(this.id()));
+    const siguienteId = this.librosService.idSiguiente(this.libro().id);
     this.router.navigate(['/libros', siguienteId]);
   }
 

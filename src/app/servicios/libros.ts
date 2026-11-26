@@ -40,4 +40,11 @@ export class LibrosService {
     }
     return this.libros[indice + 1].id;
   }
+
+  actualizarTitulo(id: number, nuevoTitulo: string): void {
+    const libro = this.obtenerPorId(id);
+    if (libro && nuevoTitulo.trim()) {
+      libro.titulo = nuevoTitulo.trim();
+    }
+  }
 }

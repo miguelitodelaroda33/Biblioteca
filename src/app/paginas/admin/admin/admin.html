@@ -1,0 +1,12 @@
+<div class="admin-header">
+  <h2>Panel de Administración</h2>
+  <button type="button" (click)="cerrarSesion()">Cerrar sesión</button>
+</div>
+
+<nav class="sub-menu">
+  <a routerLink="libros" routerLinkActive="activo">Gestionar Libros</a>
+</nav>
+
+<section>
+  <router-outlet />
+</section>

@@ -1,0 +1,9 @@
+<h3>Listado para edición</h3>
+<ul>
+  @for (libro of libros; track libro.id) {
+    <li>
+      <strong>{{ libro.titulo }}</strong> ({{ libro.autor }}) —
+      <a [routerLink]="['/admin/libros', libro.id, 'editar']">Editar título</a>
+    </li>
+  }
+</ul>

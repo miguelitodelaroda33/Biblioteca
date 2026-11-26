@@ -1,0 +1,22 @@
+@if (libro(); as item) {
+  <h3>Editando: {{ item.titulo }}</h3>
+
+  <form (ngSubmit)="guardar()">
+    <label for="titulo">Nuevo título:</label>
+    <input
+      id="titulo"
+      name="titulo"
+      type="text"
+      [(ngModel)]="tituloEditado"
+      required
+    />
+
+    <div class="acciones">
+      <button type="submit">Guardar cambios</button>
+      <a routerLink="/admin/libros">Cancelar</a>
+    </div>
+  </form>
+} @else {
+  <p>Libro no encontrado.</p>
+  <a routerLink="/admin/libros">Volver</a>
+}

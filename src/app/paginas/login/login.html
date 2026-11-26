@@ -1,0 +1,8 @@
+<h2>Acceso a Zona Privada</h2>
+<p>Necesitas iniciar sesión para entrar en el panel de administración.</p>
+
+@if (returnUrl()) {
+  <p><small>Tras iniciar sesión volverás a: <strong>{{ returnUrl() }}</strong></small></p>
+}
+
+<button type="button" (click)="iniciarSesion()">Entrar como Administrador</button>
